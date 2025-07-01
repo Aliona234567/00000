@@ -1,0 +1,152 @@
+.header {
+    background-color: #611313;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+    position: relative;
+}
+
+.logoContainer {
+    z-index: 100;
+}
+
+.logoText {
+    color: white;
+    margin: 0;
+    font-size: 1.2rem;
+    max-width: 200px;
+    text-decoration: none;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.authLinks {
+    display: flex;
+    gap: 15px;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: underline;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.navItem:hover {
+    transform: translateY(-3px);
+}
+
+.mobileLabel {
+    font-size: 0.7rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.mobileMenuButton {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        padding: 10px 5%;
+    }
+    
+    .logoText {
+        font-size: 1rem;
+        max-width: 150px;
+    }
+    
+    .mobileMenuButton {
+        display: block;
+    }
+    
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #611313;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 25px;
+        transform: translateY(-150%);
+        transition: transform 0.4s ease;
+        z-index: 99;
+    }
+    
+    .navActive {
+        transform: translateY(0);
+    }
+    
+    .authLinks {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .link {
+        width: 80%;
+        text-align: center;
+    }
+    
+    .mobileLabel {
+        display: block;
+    }
+    
+    .navItem {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logoText {
+        max-width: 120px;
+        font-size: 0.9rem;
+    }
+    
+    .link {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
